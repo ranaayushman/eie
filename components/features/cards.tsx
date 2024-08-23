@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useFeatureStore } from "../store";
 import React from "react";
+import Image from "next/image";
 
 type FeatureCardProps = {
     gradient: string;
@@ -31,7 +32,7 @@ export const Name1 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -47,7 +48,7 @@ export const Name2 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -63,7 +64,7 @@ export const Name3 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f7f0ff] to-[#a78afe]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -79,7 +80,7 @@ export const Name4 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fff7] to-[#adf8ff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -95,7 +96,7 @@ export const Name5 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f7fff5] to-[#adffd8]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -111,7 +112,7 @@ export const Name6 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -126,7 +127,7 @@ export const Name7 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -142,7 +143,7 @@ export const Name8 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -158,7 +159,7 @@ export const Name9 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
@@ -174,7 +175,7 @@ export const Name10 = ({ id }: CardProps) => {
     const isFullscreen = fullscreenFeature === id;
     return (
         <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-            <img
+            <Image alt="" fill
                 className={classNames(
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"

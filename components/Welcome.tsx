@@ -54,7 +54,7 @@ const BubbleText = () => {
 
     return (
         <h2 className="hover-text text-center text-5xl font-thin text-indigo-300">
-            <Text>Welcome to ISA HIT Student's Chapter</Text>
+            <Text>Welcome to ISA HIT Students Chapter</Text>
         </h2>
     );
 };

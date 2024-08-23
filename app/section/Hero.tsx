@@ -28,7 +28,7 @@ const Hero = () => {
                         <Welcome />
                     </div>
                     <p className="px-10 text-2xl">
-                        Welcome to The ISA HIT Student's Chapter.
+                        Welcome to The ISA HIT Student Chapter.
                         <br /> Where connects students with industry experts through
                         workshops and events,
                         <br />
