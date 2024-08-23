@@ -7,8 +7,8 @@ import { useState } from "react";
 
 const tabs = [
     { name: "Home", href: "/" },
-    { name: "Event", href: "/event" },
-    { name: "Team", href: "/team" },
+    { name: "Event", href: "#event" },
+    { name: "Team", href: "#team" },
 ] as const;
 
 const ChipTabs = () => {
