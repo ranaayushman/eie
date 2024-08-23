@@ -81,7 +81,7 @@ const Socials = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="w-full sticky top-0 flex h-96 md:h-screen items-center">
+                <div className="w-full p-20 sticky top-0 flex h-96 md:h-screen items-center">
                     <div className="w-full md:w-2/3 relative aspect-square bg-gray-100 rounded-full">
                         {features.map((feature) => (
                             <feature.card id={feature.id} key={feature.id} />
