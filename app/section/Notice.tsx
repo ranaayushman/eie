@@ -30,7 +30,7 @@ const notices = [
 
 const Notice = () => {
   return (
-    <section className="py-12">
+    <section id="event" className="py-12">
       <MaxWidthWrapper>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-gray-100 mb-8">

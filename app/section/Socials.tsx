@@ -17,70 +17,70 @@ import React, { Fragment } from "react";
 
 const features = [
     {
-        title: "Name 1",
+        title: "Ravi Kumar Singh",
         id: "1",
         position: "President",
         card: Name1,
     },
     {
-        title: "Name 2",
+        title: "Yashmeen Nisha",
         id: "2",
         position: "Vice President",
         card: Name2,
     },
     {
-        title: "Name 3",
+        title: "Anand Vardhan",
         id: "3",
         position: "Secretary",
         card: Name3,
     },
     {
-        title: "Name 4",
+        title: "Vishal Roy",
         id: "4",
         position: "Treasurer",
         card: Name4,
     },
     {
-        title: "Name 5",
+        title: "Anukriti Sharma",
         id: "5",
         position: "Technical Head",
         card: Name5,
     },
     {
-        title: "Name 6",
+        title: "Aritra Chakraborty",
         id: "6",
         position: "Public Relation Head",
         card: Name6,
     },
     {
-        title: "Name 7",
+        title: "Ankur Kumar",
         id: "7",
         position: "Media Head",
         card: Name7,
     },
     {
-        title: "Name 8",
+        title: "Dharamveer Kumar",
         id: "8",
         position: "Event Management Head",
         card: Name8,
     },
     {
-        title: "Name 9",
+        title: "Anisha Dhara",
         id: "9",
         position: "Creative Head",
         card: Name9,
     },
     {
-        title: "Name 10",
+        title: "Ruchika Kumari",
         id: "10",
-        position: "Women Head",
+        position: "Women's Head",
         card: Name10,
     },
 ];
 
 const Socials = () => {
     return (
-        <section id="Team" className="mx-auto max-w-6xl px-4 ">
+        <section id="team" className="mx-auto max-w-6xl px-4 ">
             <div className="flex flex-col-reverse md:flex-row w-full gap-10 md:gap-20 items-start">
                 <div className="w-full py-20 md:py-[50vh]">
                     <ul className="space-y-4 md:space-y-6">
@@ -88,7 +88,7 @@ const Socials = () => {
                             <li key={feature.id}>
                                 <Fragment>
                                     <FeatureTitle id={feature.id}>{feature.title}</FeatureTitle>
-                                    <p className="text-lg text-yellow-400 text-center">{feature.position}</p>
+                                    <p className="text-lg text-yellow-400 text-center pb-16 pt-2">{feature.position}</p>
                                 </Fragment>
                             </li>
                         ))}

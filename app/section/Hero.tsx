@@ -21,7 +21,7 @@ const Hero = () => {
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
     return (
-        <section id="hero" className="text-gray-300 text-center h-full">
+        <section className="text-gray-300 text-center h-full">
             <MaxWidthWrapper>
                 <div>
                     <div className="py-20">

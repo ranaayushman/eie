@@ -26,7 +26,7 @@ export const FeatureTitle = ({ children, id }: Props) => {
         <p
             ref={ref}
             className={classNames(
-                "text-5xl transition-colors py-16 text-center",
+                "text-5xl transition-colors pt-16 text-center",
                 IsInview ? "text-gray-100" : "text-gray-700"
             )}
         >

@@ -1,13 +1,18 @@
-"use client"
+"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link"; // Import Link from next/link
 import { useState } from "react";
 
-const tabs = ["Home", "About", "Team"] as const;
+const tabs = [
+    { name: "Home", href: "/" },
+    { name: "Event", href: "/event" },
+    { name: "Team", href: "/team" },
+] as const;
 
 const ChipTabs = () => {
-    const [selected, setSelected] = useState<typeof tabs[number]>(tabs[0]);
+    const [selected, setSelected] = useState<typeof tabs[number]["name"]>(tabs[0].name);
 
     return (
         <div className="px-4 sm:px-10 z-[100] backdrop-blur-md h-24 inset-x-0 top-0 w-full transition-all flex items-center justify-between flex-wrap gap-2 shadow-lg">
@@ -21,12 +26,13 @@ const ChipTabs = () => {
             </div>
             <div className="flex">
                 {tabs.map((tab) => (
-                    <Chip
-                        text={tab}
-                        selected={selected === tab}
-                        setSelected={setSelected}
-                        key={tab}
-                    />
+                    <Link href={tab.href} key={tab.name}>
+                        <Chip
+                            text={tab.name}
+                            selected={selected === tab.name}
+                            setSelected={setSelected}
+                        />
+                    </Link>
                 ))}
             </div>
         </div>
@@ -34,9 +40,9 @@ const ChipTabs = () => {
 };
 
 interface ChipProps {
-    text: typeof tabs[number];
+    text: typeof tabs[number]["name"];
     selected: boolean;
-    setSelected: (tab: typeof tabs[number]) => void;
+    setSelected: (tab: typeof tabs[number]["name"]) => void;
 }
 
 const Chip: React.FC<ChipProps> = ({ text, selected, setSelected }) => {
