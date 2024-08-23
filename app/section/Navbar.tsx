@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
-const tabs = ["Home", "About", "Socials"] as const;
+const tabs = ["Home", "About", "Team"] as const;
 
 const ChipTabs = () => {
     const [selected, setSelected] = useState<typeof tabs[number]>(tabs[0]);

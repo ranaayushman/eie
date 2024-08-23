@@ -1,9 +1,7 @@
 // Static Website without any connection to database
-
 "use server";
 
 import MaxWidthWrapper from "@/components/mmw";
-import { Link } from "lucide-react";
 import React from "react";
 
 const notices = [
@@ -35,7 +33,7 @@ const Notice = () => {
     <section className="py-12">
       <MaxWidthWrapper>
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <h2 className="text-3xl font-bold text-center text-gray-100 mb-8">
             Upcoming Workshops & Events
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -49,12 +47,12 @@ const Notice = () => {
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">{notice.date}</p>
                 <p className="text-gray-700 mb-4">{notice.description}</p>
-                <Link
+                <a
                   href={notice.link}
                   className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
                 >
                   Learn More
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -65,6 +63,7 @@ const Notice = () => {
 };
 
 export default Notice;
+
 
 // For connecting to database this code can be used
 // import React, { useEffect, useState } from 'react';

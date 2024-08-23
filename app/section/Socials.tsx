@@ -70,7 +70,7 @@ const features = [
 
 const Socials = () => {
     return (
-        <section id="socials" className="mx-auto max-w-6xl px-4 ">
+        <section id="Team" className="mx-auto max-w-6xl px-4 ">
             <div className="flex flex-col-reverse md:flex-row w-full gap-10 md:gap-20 items-start">
                 <div className="w-full py-20 md:py-[50vh]">
                     <ul className="space-y-4 md:space-y-6">

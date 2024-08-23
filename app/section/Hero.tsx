@@ -27,8 +27,8 @@ const Hero = () => {
                     <div className="py-20">
                         <Welcome />
                     </div>
-                    <p className="px-10 text-2xl">
-                        Welcome to The ISA HIT Student Chapter.
+                    <p className="p-10 pt-0  text-2xl">
+                        Welcome to The ISA HIT Student's Chapter.
                         <br /> Where connects students with industry experts through
                         workshops and events,
                         <br />
@@ -36,7 +36,7 @@ const Hero = () => {
                         engineering careers.
                     </p>
                 </div>
-                <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+                <div className="sticky top-0 flex h-full items-center overflow-hidden">
                     <motion.div style={{ x }} className="flex gap-0">
                         {cards.map((card) => (
                             <Card card={card} key={card.id} />

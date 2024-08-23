@@ -98,7 +98,7 @@ const Footer = () => {
                   <FaTwitter size={24} />
                 </span>
               </Link> */}
-              <Link href="@" passHref>npx shadcn-ui@latest init
+              <Link href="@" passHref>
 
                 <span className="text-blue-700 hover:text-blue-500 transition cursor-pointer">
                   <FaLinkedinIn size={24} />
