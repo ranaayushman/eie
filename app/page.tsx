@@ -5,10 +5,12 @@ import Footer from './section/Footer'
 import NoticeBoard from './section/Notice'
 import Previous from './section/Previous'
 import Socials from './section/Socials'
+import Head from "next/head"
 
 const page = () => {
   return (
     <div>
+      
       <Navbar />
       <Hero />
       <Previous />
