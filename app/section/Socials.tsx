@@ -83,7 +83,7 @@ const Socials = () => {
     return (
         <section id="team" className="mx-auto max-w-6xl px-4 ">
             <div className="flex flex-col-reverse md:flex-row w-full gap-10 md:gap-20 items-start">
-               
+
                 <div className="w-full py-20 md:py-[50vh]">
                     <ul className="space-y-4 md:space-y-6">
                         {features.map((feature) => (
@@ -97,7 +97,7 @@ const Socials = () => {
                     </ul>
                 </div>
                 <div className="w-full p-20 sticky top-0 flex h-96 md:h-screen items-center">
-                    <div className="w-full md:w-2/3 relative aspect-square bg-gray-100 rounded-full">
+                    <div className="w-full md:w-2/3 relative aspect-square bg-gray-700 shadow-xl rounded-full">
                         {features.map((feature) => (
                             <feature.card id={feature.id} key={feature.id} />
                         ))}

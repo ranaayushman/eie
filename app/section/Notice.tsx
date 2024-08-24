@@ -3,6 +3,7 @@
 
 import MaxWidthWrapper from "@/components/mmw";
 import React from "react";
+import Link from 'next/link';
 
 const notices = [
   {
@@ -47,12 +48,14 @@ const Notice = () => {
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">{notice.date}</p>
                 <p className="text-gray-700 mb-4">{notice.description}</p>
-                <a
-                  href={notice.link}
-                  className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
-                >
-                  Learn More
-                </a>
+                <div>
+                  <Link
+                    href={notice.link}
+                    className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+                  >
+                    Register Now
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
