@@ -13,6 +13,7 @@ import {
     Name9,
 } from "@/components/features/cards";
 import { FeatureTitle } from "@/components/features/title";
+import Image from "next/image";
 import React, { Fragment } from "react";
 
 const features = [
@@ -82,6 +83,7 @@ const Socials = () => {
     return (
         <section id="team" className="mx-auto max-w-6xl px-4 ">
             <div className="flex flex-col-reverse md:flex-row w-full gap-10 md:gap-20 items-start">
+               
                 <div className="w-full py-20 md:py-[50vh]">
                     <ul className="space-y-4 md:space-y-6">
                         {features.map((feature) => (

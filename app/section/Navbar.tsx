@@ -6,9 +6,9 @@ import Link from "next/link"; // Import Link from next/link
 import { useState } from "react";
 
 const tabs = [
-    { name: "Home", href: "/" },
-    { name: "Event", href: "#event" },
+    { name: "Events", href: "#event" },
     { name: "Team", href: "#team" },
+    { name: "More", href: "#contact" },
 ] as const;
 
 const ChipTabs = () => {
