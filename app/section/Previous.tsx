@@ -28,7 +28,7 @@ const Previous = () => {
             >
               <div className="row-span-3 border-1 ">
                 <Image
-                  src="/img/limg2.jpg"
+                  src="/img/limg18.png"
                   width={300}
                   height={200}
                   alt=""
@@ -37,7 +37,7 @@ const Previous = () => {
               </div>
               <div className="col-span-2 row-span-2 rounded-lg">
                 <Image
-                  src="/img/wimg1.jpg"
+                  src="/img/img20.png"
                   width={300}
                   height={200}
                   alt=""
@@ -46,7 +46,7 @@ const Previous = () => {
               </div>
               <div className="row-span-3 col-start-3 row-start-3">
                 <Image
-                  src="/img/limg3.jpg"
+                  src="/img/limg7.png"
                   width={300}
                   height={200}
                   alt=""
@@ -55,7 +55,7 @@ const Previous = () => {
               </div>
               <div className="row-span-3 col-start-2 row-start-3">
                 <Image
-                  src="/img/himg1.jpg"
+                  src="/img/limg14.png"
                   width={300}
                   height={200}
                   alt=""
@@ -64,7 +64,7 @@ const Previous = () => {
               </div>
               <div className="row-span-2 row-start-4">
                 <Image
-                  src="/img/img1.jpg"
+                  src="/img/img10_1.png"
                   width={300}
                   height={200}
                   alt=""

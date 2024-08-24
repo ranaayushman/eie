@@ -37,7 +37,7 @@ export const Name1 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img1.jpg"
+                src="/img/img11.png"
             />
         </FeatureCard>
     );
@@ -53,7 +53,7 @@ export const Name2 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img5.jpg"
+                src="/img/img12.png"
             />
         </FeatureCard>
     );
@@ -69,7 +69,7 @@ export const Name3 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img4.jpg"
+                src="/img/img12.png"
             />
         </FeatureCard>
     );
@@ -85,7 +85,7 @@ export const Name4 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img3.jpg"
+                src="/img/img13.png"
             />
         </FeatureCard>
     );
@@ -101,7 +101,7 @@ export const Name5 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img2.jpg"
+                src="/img/img14.png"
             />
         </FeatureCard>
     );
@@ -117,7 +117,7 @@ export const Name6 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img1.jpg"
+                src="/img/img15.png"
             />
         </FeatureCard>
     );
@@ -132,7 +132,7 @@ export const Name7 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img4.jpg"
+                src="/img/img16.png"
             />
         </FeatureCard>
     );
@@ -148,7 +148,7 @@ export const Name8 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img3.jpg"
+                src="/img/img17.png"
             />
         </FeatureCard>
     );
@@ -164,7 +164,7 @@ export const Name9 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img1.jpg"
+                src="/img/img18.png"
             />
         </FeatureCard>
     );
@@ -180,7 +180,7 @@ export const Name10 = ({ id }: CardProps) => {
                     "absolute rounded-full shadow-lg transition-transform",
                     isFullscreen ? "scale-0" : "scale-100"
                 )}
-                src="/img/img2.jpg"
+                src="/img/img19.png"
             />
         </FeatureCard>
     );

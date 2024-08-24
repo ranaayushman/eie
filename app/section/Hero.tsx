@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from "react";
-;
 import { motion, useScroll, useTransform } from "framer-motion";
 import Welcome from "../../components/Welcome";
 import MaxWidthWrapper from "@/components/mmw";
@@ -75,7 +74,7 @@ const Card = ({ card }: { card: CardType }) => {
 
 const cards: CardType[] = [
     {
-        url: "/img/img2.jpg",
+        url: "/img/img20.png",
         title: "Event 1",
         id: 1,
     },
@@ -90,22 +89,22 @@ const cards: CardType[] = [
         id: 3,
     },
     {
-        url: "/img/img4.jpg",
+        url: "/img/img9.png",
         title: "Event 4",
         id: 4,
     },
     {
-        url: "/img/img5.jpg",
+        url: "/img/img12.png",
         title: "Event 5",
         id: 5,
     },
     {
-        url: "/img/img6.jpg",
+        url: "/img/img16.png",
         title: "Event 6",
         id: 6,
     },
     {
-        url: "/img/img7.jpg",
+        url: "/img/img17.png",
         title: "Event 7",
         id: 7,
     },
