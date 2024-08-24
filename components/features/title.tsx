@@ -10,7 +10,7 @@ type Props = {
 
 export const FeatureTitle = ({ children, id }: Props) => {
     const ref = useRef<HTMLParagraphElement>(null);
-    const IsInview = useInView(ref, { margin: "-50% 0px -50% 0px" });
+    const IsInview = useInView(ref, { margin: "-40% 0px -40% 0px" });
     const setInViewFeature = useFeatureStore((state) => state.setInViewFeature);
     const inViewFeature = useFeatureStore((state) => state.inViewFeature); // Retrieve the current in-view feature
 
