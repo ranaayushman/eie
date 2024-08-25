@@ -33,19 +33,19 @@ const BubbleText = () => {
             });
 
             span.addEventListener("mouseleave", function (this: typeof span) {
-                this.style.fontWeight = "100";
+                this.style.fontWeight = "500";
                 this.style.color = "rgb(165, 180, 252)";
 
                 const leftNeighbor = this.previousElementSibling as HTMLSpanElement;
                 const rightNeighbor = this.nextElementSibling as HTMLSpanElement;
 
                 if (leftNeighbor) {
-                    leftNeighbor.style.fontWeight = "100";
+                    leftNeighbor.style.fontWeight = "500";
                     leftNeighbor.style.color = "rgb(165, 180, 252)";
                 }
 
                 if (rightNeighbor) {
-                    rightNeighbor.style.fontWeight = "100";
+                    rightNeighbor.style.fontWeight = "500";
                     rightNeighbor.style.color = "rgb(165, 180, 252)";
                 }
             });
