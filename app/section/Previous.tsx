@@ -13,7 +13,7 @@ const Previous = () => {
     offset: ["0 1", "0.4 1"],
   });
   return (
-    <section className=" text-gray-300 py-12">
+    <section className=" text-gray-300 py-28">
       <MaxWidthWrapper>
         <div className="container mx-auto px-4">
           {/* Images should be replaced with proper portrait and landscape images so that the grid layout can be maintained */}

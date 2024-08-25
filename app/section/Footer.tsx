@@ -76,7 +76,7 @@ const Footer = () => {
               EIE Department,
               <br />
               Haldia, West Bengal
-              <Link href="isa.hit.sc@gmail.com" passHref>
+              <Link href="mailto:isa.hit.sc@gmail.com" passHref>
                 <span className="text-blue-400 cursor-pointer"> isa.hit.sc@gmail.com</span>
               </Link>
               <br />
