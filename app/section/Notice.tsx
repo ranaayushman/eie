@@ -41,7 +41,7 @@ const Notice = () => {
             {notices.map((notice, index) => (
               <div
                 key={index}
-                className="bg-blue-100 p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300"
+                className="bg-blue-100 p-6 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-300"
               >
                 <h3 className="text-xl font-semibold text-blue-800 mb-2">
                   {notice.title}
@@ -51,7 +51,7 @@ const Notice = () => {
                 <div>
                   <Link
                     href={notice.link}
-                    className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+                    className="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-600"
                   >
                     Register Now
                   </Link>
