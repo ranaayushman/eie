@@ -13,9 +13,10 @@
 
 @layer base {
   :root {
+    z-index: -10;
     --tw-bg-opacity: 1;
-    background-color: rgb(2 6 23 / var(--tw-bg-opacity));
-    background-image: linear-gradient(to right,#4f4f4f2e 1px,transparent 1px),linear-gradient(to bottom,#4f4f4f2e 1px,transparent 1px);
-    background-size: 14px 24px;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+    background-image: radial-gradient(#ffffff33 1px, #00091d 1px);
+    background-size: 20px 20px;
   }
 }
