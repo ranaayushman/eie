@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Welcome from "../../components/Welcome";
 import MaxWidthWrapper from "@/components/mmw";
+import Carousel from "@/components/Carousel";
 
 interface CardType {
     url: string;
@@ -36,11 +37,12 @@ const Hero = () => {
                     </p>
                 </div>
                 <div className="sticky top-0 flex h-full items-center overflow-hidden">
-                    <motion.div style={{ x }} className="flex gap-0">
+                    {/* <motion.div style={{ x }} className="flex gap-0">
                         {cards.map((card) => (
                             <Card card={card} key={card.id} />
                         ))}
-                    </motion.div>
+                    </motion.div> */}
+                    <Carousel />
                 </div>
             </MaxWidthWrapper>
         </section>
