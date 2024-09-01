@@ -23,7 +23,7 @@ const ChipTabs = () => {
                     height={20}
                     alt=""
                 />
-                <p className="inline-block text-white"> EIE Department</p>
+                <p className="hidden sm:inline-block text-white"> EIE Department</p>
             </div>
             <div className="flex">
                 {tabs.map((tab) => (
