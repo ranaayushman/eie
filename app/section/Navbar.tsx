@@ -16,13 +16,14 @@ const ChipTabs = () => {
 
     return (
         <div className="px-4 sm:px-10 z-[100] backdrop-blur-md h-24 inset-x-0 top-0 w-full transition-all flex items-center justify-between flex-wrap gap-2 shadow-lg">
-            <div>
+            <div className="flex items-center">
                 <Image
                     src="/img/file.png"
                     width={100}
                     height={20}
                     alt=""
                 />
+                <p className="inline-block text-white"> EIE Department</p>
             </div>
             <div className="flex">
                 {tabs.map((tab) => (
