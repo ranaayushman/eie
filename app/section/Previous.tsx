@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-
 import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import MaxWidthWrapper from "@/components/mmw";
+
 
 const Previous = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -12,8 +12,19 @@ const Previous = () => {
     target: ref,
     offset: ["0 1", "0.4 1"],
   });
+
   return (
-    <section className=" text-gray-300 py-28">
+    <section className="relative text-gray-300 py-28 bg-cover bg-center">
+      {/* Background Image with Dim Effect */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/img/coolbgno.png')",
+          opacity: 0.5, // Adjust opacity here
+          zIndex: -1, // Ensure it is behind other content
+        }}
+      />
+
       <MaxWidthWrapper>
         <div className="container mx-auto px-4">
           {/* Images should be replaced with proper portrait and landscape images so that the grid layout can be maintained */}
@@ -86,7 +97,7 @@ const Previous = () => {
                 between academic knowledge and industry practices, offering
                 members access to resources, certifications, and networking
                 events that can enhance their careers in automation and related
-                fields.{" "}
+                fields.
               </p>
             </div>
           </div>
