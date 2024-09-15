@@ -16,12 +16,12 @@ const testimonials = [
     image: "/img/img5.jpg",
     testimonial: "The quality and support are unmatched.",
   },
-  {
-    name: "Michael Johnson",
-    role: "Manager, Company C",
-    image: "/img/img22.png",
-    testimonial: "Highly recommend their work to everyone!",
-  },
+//   {
+//     name: "Michael Johnson",
+//     role: "Manager, Company C",
+//     image: "/img/img2.jpg",
+//     testimonial: "Highly recommend their work to everyone!",
+//   },
 ];
 
 const Testimonial = () => {
@@ -45,16 +45,16 @@ const Testimonial = () => {
   return (
     <div className="relative w-full max-w-4xl mx-auto p-8">
       {/* Testimonial Content */}
-      <div className="w-full flex bg-white rounded-xl items-center justify-between p-6 shadow-lg">
+      <div className="w-full flex bg-slate-700 rounded-xl items-center justify-between p-6 shadow-lg">
         {/* Testimonial Text */}
         <div className="flex flex-col justify-center text-left w-2/3 pr-6">
-          <p className="text-xl italic font-semibold text-gray-800">
+          <p className="text-xl italic font-semibold text-gray-400">
             &quot;{testimonials[currentIndex].testimonial}&quot;
           </p>
           <h3 className="mt-4 text-lg font-bold">
             {testimonials[currentIndex].name}
           </h3>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-slate-950">
             {testimonials[currentIndex].role}
           </span>
         </div>
