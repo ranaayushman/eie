@@ -7,8 +7,8 @@ const images = [
   "/img/img2.jpg",
   "/img/img3.jpg",
   "/img/img4.jpg",
-  "/img/img7.png",
-  "/img/img8.png",
+  "/img/img14.png",
+  "/img/CodeX.jpg",
 ];
 
 const Carousel: React.FC = () => {
@@ -49,7 +49,7 @@ const Carousel: React.FC = () => {
               src={images[currentIndex]}
               alt={`Carousel Image ${currentIndex + 1}`}
               layout="fill"
-              objectFit="cover"
+              
               priority
             />
           </motion.div>

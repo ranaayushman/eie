@@ -6,10 +6,10 @@ import { useRef } from "react";
 import MaxWidthWrapper from "@/components/mmw";
 
 const images = [
-  { src: "/img/img20.png", width: 250, height: 50 },
-  { src: "/img/img21.png", width: 250, height: 50 },
-  { src: "/img/img23.png", width: 250, height: 50 },
-  { src: "/img/img20.png", width: 250, height: 50 },
+  { src: "/img/img13.png", width: 270, height: 50 },
+  { src: "/img/img16.png", width: 270, height: 50 },
+  { src: "/img/img19.png", width: 270, height: 50 },
+  { src: "/img/img20.png", width: 270, height: 50 },
 ];
 
 const Previous = () => {
@@ -21,13 +21,13 @@ const Previous = () => {
 
   return (
     <section className="relative text-gray-300 py-28 bg-cover bg-center">
-      {/* Background Image with Dim Effect */}
+      
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/img/coolbgno.png')",
-          opacity: 0.5, // Adjust opacity here
-          zIndex: -1, // Ensure it is behind other content
+          opacity: 0.5, 
+          zIndex: -1, 
         }}
       />
 
