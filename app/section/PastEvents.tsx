@@ -6,7 +6,7 @@ const PastEvents = () => {
   return (
     <section className="text-gray-300 py-8 md:py-16">
       <MaxWidthWrapper>
-        <h1 className="text-4xl md:text-6xl mb-6 text-blue-400 font-bold text-center">
+        <h1 className="text-4xl md:text-6xl mb-6 text-[#c7d2fe] font-bold text-center">
           Recent Events
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

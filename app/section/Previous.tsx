@@ -54,7 +54,7 @@ const Previous = () => {
               ))}
             </motion.div>
             <div className="md:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              <h2 className="text-4xl text-[#c7d2fe] md:text-5xl font-bold mb-4">
                 ISA In HIT
               </h2>
               <p className="text-lg md:text-xl mb-8">

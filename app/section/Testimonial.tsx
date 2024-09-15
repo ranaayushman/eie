@@ -54,7 +54,7 @@ const Testimonial = () => {
           <h3 className="mt-4 text-lg font-bold">
             {testimonials[currentIndex].name}
           </h3>
-          <span className="text-sm text-slate-950">
+          <span className="text-sm text-[#c7d2fe]">
             {testimonials[currentIndex].role}
           </span>
         </div>
