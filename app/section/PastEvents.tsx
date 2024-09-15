@@ -12,10 +12,16 @@ const PastEvents = () => {
             <h2 className="text-4xl mb-4">Event : CodeX</h2>
             <p className="text-lg">
               CodeX, organized by the ISA HIT Students Chapter, was a two-day
+              <br />
               coding competition held on September 4th and 6th. The first round,
-              an aptitude test, assessed participants' logical reasoning and
+              <br />
+              an aptitude test, assessed participants&apos; logical reasoning
+              and
+              <br />
               problem-solving skills. The second round, held on September 6th,
+              <br />
               was a coding challenge where competitors solved practical
+              <br />
               programming problems under time constraints.
             </p>
           </div>

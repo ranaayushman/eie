@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 const testimonials = [
@@ -7,7 +8,7 @@ const testimonials = [
     name: "John Doe",
     role: "CEO, Company A",
     image: "/img/img1.jpg", // Add your image path
-    testimonial: "This is the best service I've ever used!",
+    testimonial: "This is the best service I&apos;ve ever used!",
   },
   {
     name: "Jane Smith",
@@ -48,7 +49,7 @@ const Testimonial = () => {
         {/* Testimonial Text */}
         <div className="flex flex-col justify-center text-left w-2/3 pr-6">
           <p className="text-xl italic font-semibold text-gray-800">
-            "{testimonials[currentIndex].testimonial}"
+            &quot;{testimonials[currentIndex].testimonial}&quot;
           </p>
           <h3 className="mt-4 text-lg font-bold">
             {testimonials[currentIndex].name}
@@ -60,10 +61,12 @@ const Testimonial = () => {
 
         {/* Testimonial Image */}
         <div className="w-1/3 flex justify-end">
-          <img
+          <Image
             src={testimonials[currentIndex].image}
             alt={testimonials[currentIndex].name}
-            className="w-24 h-24 rounded-full object-cover"
+            width={96}
+            height={96}
+            className="rounded-full object-cover"
           />
         </div>
       </div>
