@@ -7,12 +7,14 @@ import Previous from './section/Previous'
 import Socials from './section/Socials'
 import Testimonial from './section/Testimonial'
 import PastEvents from './section/PastEvents'
+import NavbarTwo from './section/NavbarTwo'
 
 
 const page = () => {
   return (
     <div>
       <Navbar />
+      <NavbarTwo />
       <Hero />
       <Previous />
       <PastEvents />

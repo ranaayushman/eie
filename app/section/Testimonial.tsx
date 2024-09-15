@@ -16,12 +16,12 @@ const testimonials = [
     image: "/img/img5.jpg",
     testimonial: "The quality and support are unmatched.",
   },
-//   {
-//     name: "Michael Johnson",
-//     role: "Manager, Company C",
-//     image: "/img/img2.jpg",
-//     testimonial: "Highly recommend their work to everyone!",
-//   },
+  //   {
+  //     name: "Michael Johnson",
+  //     role: "Manager, Company C",
+  //     image: "/img/img2.jpg",
+  //     testimonial: "Highly recommend their work to everyone!",
+  //   },
 ];
 
 const Testimonial = () => {
