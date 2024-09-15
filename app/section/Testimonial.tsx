@@ -5,14 +5,14 @@ import React, { useState, useEffect } from "react";
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO, Company A",
+    name: "Prof. Dr. Uday Majhi",
+    role: "Faculty Coordinator (HOD AEIE)",
     image: "/img/img1.jpg", // Add your image path
     testimonial: "This is the best service I&apos;ve ever used!",
   },
   {
-    name: "Jane Smith",
-    role: "CTO, Company B",
+    name: "Prof Dr.Soumya Roy",
+    role: "Faculty Coordinator",
     image: "/img/img5.jpg",
     testimonial: "The quality and support are unmatched.",
   },

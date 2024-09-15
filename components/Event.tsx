@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const eventImages = [
-  "/img/img2.jpg", //Sample Images these will be replaced by CodeX Images
-  "/img/img3.jpg",
-  "/img/img4.jpg",
-  "/img/img5.jpg",
+  "/img/CodeX.jpg", //Sample Images these will be replaced by CodeX Images
+  "/img/Codex1.jpg",
+  "/img/CodeX2.jpg",
+  "/img/Codex3.jpg",
 ];
 
 const EventCarousel: React.FC = () => {
@@ -43,7 +43,7 @@ const EventCarousel: React.FC = () => {
               src={eventImages[currentIndex]}
               alt={`Event Image ${currentIndex + 1}`}
               layout="fill"
-              objectFit="cover"
+              
               priority
             />
           </motion.div>

@@ -64,7 +64,7 @@ const NavbarTwo: React.FC = () => {
                   <li>
                     <a
                       href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                      className="block py-2 px-4 hover:bg-blue-700"
+                      className="inline-block py-2 px-4 hover:bg-blue-700"
                     >
                       Link 1
                     </a>
