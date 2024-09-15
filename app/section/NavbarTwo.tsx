@@ -15,9 +15,9 @@ const NavbarTwo: React.FC = () => {
 
   return (
     <nav className="relative p-4">
-      <div className=" items-center justify-start">
-        <div className="items-center justify-start">
-          <h1 className="text-white text-xl font-bold pl-12">Dept of EIE</h1>
+      <div className="flex items-center justify-end">
+        <div>
+          {/* <h1 className="text-white text-xl font-bold">My Website</h1> */}
         </div>
         <button className="text-white md:hidden" onClick={toggleMenu}>
           {isOpen ? "Close" : "Menu"}
@@ -30,7 +30,7 @@ const NavbarTwo: React.FC = () => {
           } md:block`}
         >
           {[
-            "About",
+            "Option 1",
             "Option 2",
             "Option 3",
             "Option 4",
