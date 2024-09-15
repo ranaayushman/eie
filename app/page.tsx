@@ -5,6 +5,8 @@ import Footer from './section/Footer'
 import NoticeBoard from './section/Notice'
 import Previous from './section/Previous'
 import Socials from './section/Socials'
+import Testimonial from './section/Testimonial'
+import PastEvents from './section/PastEvents'
 
 
 const page = () => {
@@ -13,8 +15,10 @@ const page = () => {
       <Navbar />
       <Hero />
       <Previous />
-      <NoticeBoard />
+      <PastEvents />
+      {/* <NoticeBoard /> */}
       <Socials />
+      <Testimonial />
       <Footer />
     </div>
   )

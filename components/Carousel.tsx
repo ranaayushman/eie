@@ -28,6 +28,7 @@ const Carousel: React.FC = () => {
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
+      {/* Carousel Container */}
       <div
         className="relative overflow-hidden"
         style={{ paddingTop: "100%" }} // Maintains square aspect ratio
@@ -55,43 +56,42 @@ const Carousel: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Left Arrow */}
-      <button
-        onClick={handlePrev}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full md:p-4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="white"
-          className="w-6 h-6 md:w-8 md:h-8"
+      {/* Navigation Arrows - Moved Below */}
+      <div className="flex justify-center mt-4 space-x-4">
+        {/* Left Arrow */}
+        <button
+          onClick={handlePrev}
+          className="bg-black bg-opacity-50 p-2 rounded-full md:p-4"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="white"
+            className="w-6 h-6 md:w-8 md:h-8"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
 
-      {/* Right Arrow */}
-      <button
-        onClick={handleNext}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-2 rounded-full md:p-4"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="white"
-          className="w-6 h-6 md:w-8 md:h-8"
+        {/* Right Arrow */}
+        <button
+          onClick={handleNext}
+          className="bg-black bg-opacity-50 p-2 rounded-full md:p-4"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="white"
+            className="w-6 h-6 md:w-8 md:h-8"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
     </div>
   );
 };

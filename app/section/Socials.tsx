@@ -81,7 +81,7 @@ const features = [
 
 const Socials = () => {
   return (
-    <section className="relative mx-auto max-w-6xl px-4 bg-contain">
+    <section id="team" className="relative mx-auto max-w-6xl px-4 bg-contain">
       {/* Background Image with Dim Effect */}
       <div
         className="absolute inset-0 bg-contain bg-center"

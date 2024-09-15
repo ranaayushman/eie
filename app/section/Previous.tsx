@@ -5,6 +5,12 @@ import { motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import MaxWidthWrapper from "@/components/mmw";
 
+const images = [
+  { src: "/img/img20.png", width: 250, height: 50 },
+  { src: "/img/img21.png", width: 250, height: 50 },
+  { src: "/img/img23.png", width: 250, height: 50 },
+  { src: "/img/img20.png", width: 250, height: 50 },
+];
 
 const Previous = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,7 +33,6 @@ const Previous = () => {
 
       <MaxWidthWrapper>
         <div className="container mx-auto px-4">
-          {/* Images should be replaced with proper portrait and landscape images so that the grid layout can be maintained */}
           <div className="container mx-auto px-4 flex flex-col gap-5 md:flex-row items-center">
             <motion.div
               ref={ref}
@@ -35,53 +40,18 @@ const Previous = () => {
                 scale: scrollYProgress,
                 opacity: scrollYProgress,
               }}
-              className="grid grid-cols-3 grid-rows-5 gap-4 md:w-1/2 mb-8"
+              className="grid grid-cols-2 grid-rows-2 gap-1"
             >
-              <div className="row-span-3 border-1 ">
-                <Image
-                  src="/img/limg18.png"
-                  width={300}
-                  height={200}
-                  alt=""
-                  className="h-full w-full rounded-xl shadow-xl"
-                />
-              </div>
-              <div className="col-span-2 row-span-2 rounded-lg">
-                <Image
-                  src="/img/img20.png"
-                  width={300}
-                  height={200}
-                  alt=""
-                  className="h-full w-full rounded-xl shadow-xl"
-                />
-              </div>
-              <div className="row-span-3 col-start-3 row-start-3">
-                <Image
-                  src="/img/limg7.png"
-                  width={300}
-                  height={200}
-                  alt=""
-                  className="h-full w-full rounded-xl shadow-xl"
-                />
-              </div>
-              <div className="row-span-3 col-start-2 row-start-3">
-                <Image
-                  src="/img/limg14.png"
-                  width={300}
-                  height={200}
-                  alt=""
-                  className="h-full w-full rounded-xl shadow-xl"
-                />
-              </div>
-              <div className="row-span-2 row-start-4">
-                <Image
-                  src="/img/img10_1.png"
-                  width={300}
-                  height={200}
-                  alt=""
-                  className="h-full w-full rounded-xl shadow-xl"
-                />
-              </div>
+              {images.map((image, index) => (
+                <div key={index}>
+                  <Image
+                    src={image.src}
+                    width={image.width}
+                    height={image.height}
+                    alt={`Event Image ${index + 1}`}
+                  />
+                </div>
+              ))}
             </motion.div>
             <div className="md:w-1/2">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
