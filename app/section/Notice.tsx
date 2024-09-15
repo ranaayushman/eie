@@ -5,28 +5,26 @@ import MaxWidthWrapper from "@/components/mmw";
 import React from "react";
 import Link from "next/link";
 
-
 const notices = [
   {
-    title: "Advanced Automation Workshop",
-    date: "September 15, 2024",
-    description:
-      "Join us for an in-depth workshop on the latest advancements in industrial automation. Learn from experts and participate in hands-on sessions.",
-    link: "/workshops/advanced-automation",
+    title: "Tech Quiz 5.0",
+    date: "September 21, 2024",
+    description: "Stay Tuned",
+    link: "/",
   },
   {
-    title: "ISA HIT Students Chapter Annual Meet",
-    date: "October 10, 2024",
+    title: "TBA",
+    date: "TBA",
     description:
-      "Be a part of the annual gathering of ISA HIT Students Chapter. Network with professionals, attend keynote sessions, and explore future opportunities.",
-    link: "/events/annual-meet",
+      "TBA",
+    link: "/",
   },
   {
-    title: "IoT and Smart Systems Seminar",
-    date: "November 5, 2024",
+    title: "TBA",
+    date: "TBA",
     description:
-      "Explore the future of IoT and smart systems in this seminar. Discover cutting-edge technologies and their applications in industry.",
-    link: "/seminars/iot-smart-systems",
+      "TBA",
+    link: "/",
   },
 ];
 
@@ -73,4 +71,3 @@ const Notice = () => {
 };
 
 export default Notice;
-

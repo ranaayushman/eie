@@ -18,7 +18,7 @@ const page = () => {
       <Hero />
       <Previous />
       <PastEvents />
-      {/* <NoticeBoard /> */}
+      <NoticeBoard />
       <Socials />
       <Testimonial />
       <Footer />
