@@ -13,17 +13,15 @@ const notices = [
     link: "/",
   },
   {
-    title: "TBA",
+    title: "Workshop on Robotic bot",
     date: "TBA",
-    description:
-      "TBA",
+    description: "TBA",
     link: "/",
   },
   {
-    title: "TBA",
+    title: "PCB Fabrication Workshop",
     date: "TBA",
-    description:
-      "TBA",
+    description: "TBA",
     link: "/",
   },
 ];
@@ -34,7 +32,7 @@ const Notice = () => {
       id="event"
       className="py-12 bg-contain bg-center"
       style={{
-        backgroundImage: "url('/img/coolbgno.png')", // Set the background image
+        backgroundImage: "url('/img/coolbgno.png')",
       }}
     >
       <MaxWidthWrapper>
