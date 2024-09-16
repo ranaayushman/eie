@@ -8,7 +8,7 @@ import { useState } from "react";
 const tabs = [
   { name: "Events", href: "#event" },
   { name: "Team", href: "#team" },
-  { name: "More", href: "#contact" },
+  { name: "More", href: "#more" },
 ] as const;
 
 const ChipTabs = () => {
