@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const NavbarTwo: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,10 +7,10 @@ const NavbarTwo: React.FC = () => {
 
   const options = [
     {
-      name: "Go to",
+      name: "Option 1",
       links: [
-        { label: "Home", href: "/" },
-        // { label: "Link 2", href: "/option-1/link-2" },
+        { label: "Link 1", href: "/option-1/link-1" },
+        { label: "Link 2", href: "/option-1/link-2" },
       ],
     },
     {
@@ -31,10 +30,24 @@ const NavbarTwo: React.FC = () => {
     {
       name: "About",
       links: [
-        { label: "ISA", href: "/about/isa" },
-        { label: "AEIE HIT", href: "/about/aeie" },
+        { label: "ISA", href: "/option-4/link-1" },
+        { label: "AEIE ", href: "/option-4/link-2" },
       ],
     },
+    // {
+    //   name: "Option 5",
+    //   links: [
+    //     { label: "Link 1", href: "/option-5/link-1" },
+    //     { label: "Link 2", href: "/option-5/link-2" },
+    //   ],
+    // },
+    // {
+    //   name: "Option 6",
+    //   links: [
+    //     { label: "Link 1", href: "/option-6/link-1" },
+    //     { label: "Link 2", href: "/option-6/link-2" },
+    //   ],
+    // },
   ];
 
   const toggleMenu = () => {
@@ -46,7 +59,7 @@ const NavbarTwo: React.FC = () => {
   };
 
   return (
-    <nav className="z-[100] sticky backdrop-blur-md h-14 inset-x-0 top-0 transition-all max-md:py-4 px-6">
+    <nav className="relative p-4">
       <div className="flex items-center justify-end">
         <button className="text-white md:hidden" onClick={toggleMenu}>
           {isOpen ? "Close" : "Menu"}
@@ -82,15 +95,15 @@ const NavbarTwo: React.FC = () => {
                 </svg>
               </button>
               {activeIndex === index && (
-                <ul className="absolute left-0 mt-2 bg-blue-800 text-white rounded shadow-lg w-1/2 z-50 md:w-64">
+                <ul className="absolute left-0 mt-2 bg-blue-800 text-white rounded shadow-lg w-full z-50 md:w-64">
                   {option.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <Link
-                        to={link.href}
+                      <a
+                        href={link.href}
                         className="inline-block py-2 px-4 hover:bg-blue-700"
                       >
                         {link.label}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>
