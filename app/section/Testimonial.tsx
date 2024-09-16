@@ -27,13 +27,12 @@ const testimonials = [
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Auto-slide functionality with faster speed (3 seconds)
+  
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 3000); // Change every 3 seconds
-
-    return () => clearInterval(interval); // Clear interval on component unmount
+    }, 3000); 
+    return () => clearInterval(interval); 
   }, [currentIndex]);
 
   const handleNext = () => {
