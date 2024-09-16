@@ -1,5 +1,4 @@
-// Static Website without any connection to database
-"use server";
+
 
 import MaxWidthWrapper from "@/components/mmw";
 import React from "react";
