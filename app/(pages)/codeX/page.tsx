@@ -17,7 +17,7 @@ const page = () => {
       />
       <MaxWidthWrapper>
         <div>
-          <h1 className="text-6xl text-[#c7d2fe] text-center">
+          <h1 className="text-4xl md:text-6xl text-[#c7d2fe] text-center">
             Event : CodeX
           </h1>
           <div className="p-10">

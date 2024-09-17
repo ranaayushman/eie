@@ -12,7 +12,7 @@ const PastEvents = () => {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h2 className="text-3xl md:text-4xl mb-4">Event: CodeX</h2>
+              <h2 className="text-3xl text-[#c7d2fe] md:text-4xl mb-4">Event: CodeX</h2>
               <p className="text-base md:text-lg">
                 CodeX, organized by the ISA HIT Students Chapter, was a two-day
                 coding competition held on September 4th and 6th. The first

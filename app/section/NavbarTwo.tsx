@@ -69,7 +69,7 @@ const NavbarTwo: React.FC = () => {
             <li key={index} className="relative dropdown">
               <button
                 onClick={() => toggleDropdown(index)}
-                className="text-gray-300 hover:text-gray-800 py-2 px-4 hover:bg-[#c7d2fe] focus:outline-none flex items-center"
+                className="text-gray-200 text-xl hover:text-gray-800 py-2 px-4 hover:bg-[#c7d2fe] focus:outline-none flex items-center"
               >
                 {option.name}
                 <svg
