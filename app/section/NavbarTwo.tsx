@@ -11,23 +11,23 @@ const NavbarTwo: React.FC = () => {
       name: "Photo Gallery",
       links: [
         { label: "CodeX", href: "/codeX" },
-        { label: "Events", href: "/home" },
+        // { label: "Events", href: "/home" },
       ],
     },
-    {
-      name: "Option 2",
-      links: [
-        { label: "Link 1", href: "/option-2/link-1" },
-        { label: "Link 2", href: "/option-2/link-2" },
-      ],
-    },
-    {
-      name: "Option 3",
-      links: [
-        { label: "Link 1", href: "/option-3/link-1" },
-        { label: "Link 2", href: "/option-3/link-2" },
-      ],
-    },
+    // {
+    //   name: "Option 2",
+    //   links: [
+    //     { label: "Link 1", href: "/option-2/link-1" },
+    //     { label: "Link 2", href: "/option-2/link-2" },
+    //   ],
+    // },
+    // {
+    //   name: "Option 3",
+    //   links: [
+    //     { label: "Link 1", href: "/option-3/link-1" },
+    //     { label: "Link 2", href: "/option-3/link-2" },
+    //   ],
+    // },
     {
       name: "About",
       links: [

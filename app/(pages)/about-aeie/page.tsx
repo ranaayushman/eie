@@ -3,12 +3,21 @@ import React from "react";
 
 const AboutAEIE: React.FC = () => {
   return (
-    <section id="AEIE"
-      style={{
-        backgroundImage: "url('/img/coolbgno.png')",
-      }}
-      className="px-6 py-12 text-gray-300 bg-cover"
+    <section
+      id="AEIE"
+      // style={{
+      //   backgroundImage: "url('/img/coolbgno.png')",
+      // }}
+      className="px-6 py-12 text-gray-200 bg-cover"
     >
+       <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/img/coolbgno.png')",
+          opacity: 0.5, // Adjust opacity here
+          zIndex: -1, // Ensure it is behind other content
+        }}
+      />
       <MaxWidthWrapper>
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-[#c7d2fe] mb-6">

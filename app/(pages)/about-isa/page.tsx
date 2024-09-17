@@ -4,16 +4,26 @@ import React from "react";
 const About: React.FC = () => {
   return (
     <section
-    id="ISA"
-      style={{
-        backgroundImage: "url('/img/coolbgno.png')",
-      }}
-      className="text-gray-300 py-10 md:px-0 bg-cover"
+      id="ISA"
+      // style={{
+      //   backgroundImage: "url('/img/coolbgno.png')",
+      // }}
+      className="text-gray-200 py-10 md:px-0 bg-cover"
     >
+      <div
+        className="absolute inset-0 bg-contain bg-center bg-repeat-y"
+        style={{
+          backgroundImage: "url('/img/coolbgno.png')",
+          opacity: 0.5, // Adjust opacity here
+          zIndex: -1, // Ensure it is behind other content
+        }}
+      />
       <MaxWidthWrapper>
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <h1 className="text-4xl text-[#c7d2fe] font-bold text-center mb-8">About ISA</h1>
+          <h1 className="text-4xl text-[#c7d2fe] font-bold text-center mb-8">
+            About ISA
+          </h1>
 
           {/* Introduction */}
           <div className="mb-8">
@@ -29,7 +39,9 @@ const About: React.FC = () => {
 
           {/* History */}
           <div className="mb-8">
-            <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">Our History</h2>
+            <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">
+              Our History
+            </h2>
             <p className="text-xl leading-relaxed text-justify">
               ISA was established in 1945 to support professionals involved in
               the design and implementation of automation systems. Over the
@@ -43,8 +55,18 @@ const About: React.FC = () => {
 
           {/* Mission & Vision */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div
+              className="absolute inset-0 bg-contain bg-center bg-repeat-y"
+              style={{
+                backgroundImage: "url('/img/coolbgno.png')",
+                opacity: 0.5, // Adjust opacity here
+                zIndex: -1, // Ensure it is behind other content
+              }}
+            />
             <div>
-              <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">Our Mission</h2>
+              <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">
+                Our Mission
+              </h2>
               <p className="text-xl leading-relaxed">
                 ISA’s mission is to empower the global automation community
                 through networking, knowledge sharing, and training, ensuring
@@ -53,7 +75,9 @@ const About: React.FC = () => {
               </p>
             </div>
             <div>
-              <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">Our Vision</h2>
+              <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">
+                Our Vision
+              </h2>
               <p className="text-xl leading-relaxed">
                 Our vision is to be the leading global organization in
                 automation and control, fostering professional growth and
@@ -64,7 +88,9 @@ const About: React.FC = () => {
 
           {/* Core Values */}
           <div className="mb-8">
-            <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">Core Values</h2>
+            <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">
+              Core Values
+            </h2>
             <ul className="list-disc list-inside text-xl">
               <li className="mb-2">Integrity and Ethics in all our actions</li>
               <li className="mb-2">
@@ -84,7 +110,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="text-center">
+          {/* <div className="text-center">
             <h2 className="text-2xl text-[#c7d2fe] font-semibold mb-4">Get in Touch</h2>
             <p className="text-xl mb-4">
               For more information about ISA and our services, feel free to
@@ -92,7 +118,7 @@ const About: React.FC = () => {
             </p>
             <p className="text-xl font-bold">Email: info@isa.org</p>
             <p className="text-xl font-bold">Phone: +1 (919) 549-8411</p>
-          </div>
+          </div> */}
         </div>
       </MaxWidthWrapper>
     </section>
