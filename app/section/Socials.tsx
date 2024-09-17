@@ -98,7 +98,7 @@ const Socials = () => {
               <li key={feature.id}>
                 <Fragment>
                   <FeatureTitle id={feature.id}>{feature.title}</FeatureTitle>
-                  <p className="text-lg text-yellow-400 text-center pb-16 pt-2">
+                  <p className="text-lg text-yellow-500 text-center pb-16 pt-2">
                     {feature.position}
                   </p>
                 </Fragment>

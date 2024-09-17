@@ -19,7 +19,7 @@ const page = () => {
       <Previous />
       <PastEvents />
       <NoticeBoard />
-      {/* <Socials /> */}
+      <Socials />
       <Testimonial />
       <Footer />
     </div>

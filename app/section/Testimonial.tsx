@@ -7,13 +7,13 @@ const testimonials = [
   {
     name: "Prof. Dr. Uday Majhi",
     role: "Faculty Coordinator (HOD AEIE)",
-    image: "/img/img1.jpg", // Add your image path
+    image: "/prof/HOD1.jpg", // Add your image path
     testimonial: "Quote",
   },
   {
     name: "Prof Dr.Soumya Roy",
     role: "Faculty Coordinator",
-    image: "/img/img5.jpg",
+    image: "/prof/img22.jpeg",
     testimonial: "Quote",
   },
   //   {
