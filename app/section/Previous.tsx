@@ -55,7 +55,7 @@ const Previous = () => {
             </motion.div>
             <div className="md:w-1/2">
               <h2 className="text-4xl text-[#c7d2fe] md:text-5xl font-bold mb-4">
-                ISA In HIT
+                ISA in HIT
               </h2>
               <p className="text-lg md:text-xl mb-8">
                 The International Society of Automation (ISA) chapter at Haldia
