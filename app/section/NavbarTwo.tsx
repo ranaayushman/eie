@@ -82,12 +82,12 @@ const NavbarTwo: React.FC = () => {
                 </svg>
               </button>
               {activeIndex === index && (
-                <ul className="absolute left-0 mt-2 bg-blue-800 text-white rounded shadow-lg w-full z-50 md:w-64">
+                <ul className="absolute left-0 mt-2 bg-slate-700 text-white rounded shadow-lg w-full z-50">
                   {option.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
                       <Link
                         href={link.href}
-                        className="inline-block py-2 px-4 hover:bg-blue-700"
+                        className="inline-block py-2 px-4 hover:bg-slate-500"
                       >
                         {link.label}
                       </Link>
