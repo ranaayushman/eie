@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const NavbarTwo: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,25 +9,8 @@ const NavbarTwo: React.FC = () => {
   const options = [
     {
       name: "Photo Gallery",
-      links: [
-        { label: "CodeX", href: "/codeX" },
-        // { label: "Events", href: "/home" },
-      ],
+      links: [{ label: "CodeX", href: "/codeX" }],
     },
-    // {
-    //   name: "Option 2",
-    //   links: [
-    //     { label: "Link 1", href: "/option-2/link-1" },
-    //     { label: "Link 2", href: "/option-2/link-2" },
-    //   ],
-    // },
-    // {
-    //   name: "Option 3",
-    //   links: [
-    //     { label: "Link 1", href: "/option-3/link-1" },
-    //     { label: "Link 2", href: "/option-3/link-2" },
-    //   ],
-    // },
     {
       name: "About",
       links: [
@@ -45,6 +28,30 @@ const NavbarTwo: React.FC = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const dropdowns = document.querySelectorAll(".dropdown");
+      let clickedInsideDropdown = false;
+
+      dropdowns.forEach((dropdown) => {
+        if (dropdown.contains(event.target as Node)) {
+          clickedInsideDropdown = true;
+        }
+      });
+
+      if (!clickedInsideDropdown) {
+        setActiveIndex(null); // Close the dropdown
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="sticky p-4">
       <div className="flex items-center justify-end">
@@ -59,7 +66,7 @@ const NavbarTwo: React.FC = () => {
           } md:block`}
         >
           {options.map((option, index) => (
-            <li key={index} className="relative">
+            <li key={index} className="relative dropdown">
               <button
                 onClick={() => toggleDropdown(index)}
                 className="text-gray-300 hover:text-gray-800 py-2 px-4 hover:bg-[#c7d2fe] focus:outline-none flex items-center"
@@ -87,7 +94,7 @@ const NavbarTwo: React.FC = () => {
                     <li key={linkIndex}>
                       <Link
                         href={link.href}
-                        className="inline-block py-2 px-4 hover:bg-slate-500"
+                        className="block w-full py-2 px-4 hover:bg-slate-500"
                       >
                         {link.label}
                       </Link>
