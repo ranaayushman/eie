@@ -14,7 +14,7 @@ const page = () => {
   return (
     <div>
       <Navbar />
-      {/* <NavbarTwo /> */}
+      <NavbarTwo />
       <Hero />
       <Previous />
       <PastEvents />

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const NavbarTwo: React.FC = () => {
@@ -7,10 +8,10 @@ const NavbarTwo: React.FC = () => {
 
   const options = [
     {
-      name: "Option 1",
+      name: "Go to",
       links: [
-        { label: "Link 1", href: "/option-1/link-1" },
-        { label: "Link 2", href: "/option-1/link-2" },
+        { label: "Home", href: "/home" },
+        { label: "Events", href: "/home" },
       ],
     },
     {
@@ -30,24 +31,10 @@ const NavbarTwo: React.FC = () => {
     {
       name: "About",
       links: [
-        { label: "ISA", href: "/option-4/link-1" },
-        { label: "AEIE ", href: "/option-4/link-2" },
+        { label: "ISA", href: "/about-isa" },
+        { label: "AEIE", href: "/about-aeie" },
       ],
     },
-    // {
-    //   name: "Option 5",
-    //   links: [
-    //     { label: "Link 1", href: "/option-5/link-1" },
-    //     { label: "Link 2", href: "/option-5/link-2" },
-    //   ],
-    // },
-    // {
-    //   name: "Option 6",
-    //   links: [
-    //     { label: "Link 1", href: "/option-6/link-1" },
-    //     { label: "Link 2", href: "/option-6/link-2" },
-    //   ],
-    // },
   ];
 
   const toggleMenu = () => {
@@ -98,12 +85,12 @@ const NavbarTwo: React.FC = () => {
                 <ul className="absolute left-0 mt-2 bg-blue-800 text-white rounded shadow-lg w-full z-50 md:w-64">
                   {option.links.map((link, linkIndex) => (
                     <li key={linkIndex}>
-                      <a
+                      <Link
                         href={link.href}
                         className="inline-block py-2 px-4 hover:bg-blue-700"
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -116,4 +103,4 @@ const NavbarTwo: React.FC = () => {
   );
 };
 
-export default NavbarTwo;
+export default NavbarTwo;

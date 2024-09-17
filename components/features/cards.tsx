@@ -129,7 +129,7 @@ export const Name6 = ({ id }: CardProps) => {
           "absolute rounded-full shadow-lg transition-transform",
           isFullscreen ? "scale-0" : "scale-100"
         )}
-        src="/img/img15.png"
+        src="/members/PRHead.jpg"
       />
     </FeatureCard>
   );
