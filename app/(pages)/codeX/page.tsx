@@ -6,7 +6,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="md:mt-20">
+    <div className="mt-2 md:mt-20">
         <div
         className="absolute inset-0"
         style={{
