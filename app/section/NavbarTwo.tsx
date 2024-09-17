@@ -8,9 +8,9 @@ const NavbarTwo: React.FC = () => {
 
   const options = [
     {
-      name: "Go to",
+      name: "Photo Gallery",
       links: [
-        { label: "Home", href: "/home" },
+        { label: "CodeX", href: "/codeX" },
         { label: "Events", href: "/home" },
       ],
     },
@@ -46,7 +46,7 @@ const NavbarTwo: React.FC = () => {
   };
 
   return (
-    <nav className="relative p-4">
+    <nav className="sticky p-4">
       <div className="flex items-center justify-end">
         <button className="text-white md:hidden" onClick={toggleMenu}>
           {isOpen ? "Close" : "Menu"}
@@ -103,4 +103,4 @@ const NavbarTwo: React.FC = () => {
   );
 };
 
-export default NavbarTwo;
+export default NavbarTwo;
