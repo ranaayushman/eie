@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const eventImages = [
   "/codex/img7.jpg", //Sample Images these will be replaced by CodeX Images
-  "/codex/img9.jpg",
   "/codex/img10.jpg",
-  "/codex/img8.jpg",
+  "/codex/img10.jpg",
+  "/codex/img11.jpg",
 ];
 
 const EventCarousel_2: React.FC = () => {
