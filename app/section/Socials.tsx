@@ -13,6 +13,7 @@ import {
   Name9,
 } from "@/components/features/cards";
 import { FeatureTitle } from "@/components/features/title";
+import Team from "@/components/Team";
 import Image from "next/image";
 import React, { Fragment } from "react";
 
@@ -83,6 +84,7 @@ const Socials = () => {
   return (
     <section id="team" className="relative mx-auto max-w-6xl px-4 bg-contain">
       {/* Background Image with Dim Effect */}
+      <Team />
       <div
         className="absolute inset-0 bg-contain bg-center"
         // style={{
