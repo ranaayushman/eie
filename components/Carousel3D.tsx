@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useState, useEffect } from "react";
-import MaxWidthWrapper from "./mmw"; 
+import MaxWidthWrapper from "./mmw";
 
 interface CarouselProps {
   images: string[];
@@ -22,7 +22,6 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     );
   };
 
-
   useEffect(() => {
     const updateSize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -37,12 +36,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   return (
     <div className="carousel-container relative w-full max-w-[100vw] h-[400px] flex justify-center items-center overflow-hidden">
       <MaxWidthWrapper>
-   
         <button
           onClick={handlePrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 z-20"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black w-12 text-2xl bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 z-20"
         >
-          Prev
+          {"<"}
         </button>
 
         <div className="carousel-track flex items-center justify-center space-x-4 sm:space-x-6">
@@ -53,7 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
               (index - 1 + images.length) % images.length === currentIndex;
 
             if (isMobile && !isCenter && !isLeft && !isRight) {
-              return null; 
+              return null;
             }
 
             return (
@@ -72,7 +70,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                   alt={`Slide ${index + 1}`}
                   className="w-full h-full object-cover"
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={{ opacity: 0.9 }}
                   transition={{ duration: 0.5 }}
                 />
               </motion.div>
@@ -80,12 +78,11 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
           })}
         </div>
 
-     
         <button
           onClick={handleNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 z-20"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 w-12 text-2xl rounded-full hover:bg-opacity-70 z-20"
         >
-          Next
+          {">"}
         </button>
       </MaxWidthWrapper>
     </div>

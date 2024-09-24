@@ -13,7 +13,7 @@ const CarouselPage = () => {
 
   return (
     <div>
-      <h1 className="text-center text-3xl mb-4">3D Cube Carousel</h1>
+      <h1 className="text-center text-3xl my-20">3D Cube Carousel</h1>
       <Carousel3D images={images} />
     </div>
   );
