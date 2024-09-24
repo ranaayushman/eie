@@ -1,38 +1,22 @@
-import EventCarousel_1 from "@/components/gallery/Event1";
-import EventCarousel_2 from "@/components/gallery/Event2";
-import EventCarousel_3 from "@/components/gallery/Event3";
-import MaxWidthWrapper from "@/components/mmw";
-import React from "react";
+"use client";
 
-const page = () => {
+import Carousel3D from "@/components/Carousel3D";
+
+const CarouselPage = () => {
+  const images = [
+    "/codex/img1.jpg",
+    "/codex/img2.jpg",
+    "/codex/img3.jpg",
+    "/codex/img4.jpg",
+    "/codex/img5.jpg",
+  ];
+
   return (
-    <div className="mt-2 md:mt-20">
-        <div
-        className="absolute inset-0"
-        style={{
-          backgroundImage: "url('/img/coolbgno.png')",
-          opacity: 0.5, // Adjust opacity here
-          zIndex: -1, // Ensure it is behind other contentF
-        }}
-      />
-      <MaxWidthWrapper>
-        <div>
-          <h1 className="text-4xl md:text-6xl text-[#c7d2fe] text-center">
-            Event : CodeX
-          </h1>
-          <div className="p-10">
-            <EventCarousel_1 />
-          </div>
-          <div className="p-10">
-            <EventCarousel_2 />
-          </div>
-          <div className="p-10">
-            <EventCarousel_3 />
-          </div>
-        </div>
-      </MaxWidthWrapper>
+    <div>
+      <h1 className="text-center text-3xl mb-4">3D Cube Carousel</h1>
+      <Carousel3D images={images} />
     </div>
   );
 };
 
-export default page;
+export default CarouselPage;
