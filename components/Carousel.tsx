@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const images = [
-  "/img/img1.jpg", 
+  "/img/img1.jpg",
   "/img/img2.jpg",
   "/img/img3.jpg",
   "/img/img4.jpg",
@@ -48,8 +48,7 @@ const Carousel: React.FC = () => {
             <Image
               src={images[currentIndex]}
               alt={`Carousel Image ${currentIndex + 1}`}
-              layout="fill"
-              
+              fill
               priority
             />
           </motion.div>
@@ -71,7 +70,11 @@ const Carousel: React.FC = () => {
             stroke="white"
             className="w-6 h-6 md:w-8 md:h-8"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
         </button>
 
@@ -88,7 +91,11 @@ const Carousel: React.FC = () => {
             stroke="white"
             className="w-6 h-6 md:w-8 md:h-8"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
       </div>

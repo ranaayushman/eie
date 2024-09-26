@@ -1,114 +1,238 @@
 "use client";
+
+import React, { useEffect, useState } from "react";
+import {
+  FiArrowRight,
+  FiBarChart2,
+  FiChevronDown,
+  FiHome,
+  FiPieChart,
+} from "react-icons/fi";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
 
 const NavbarTwo: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const options = [
-    {
-      name: "Photo Gallery",
-      links: [{ label: "CodeX", href: "/codeX" }],
-    },
-    {
-      name: "About",
-      links: [
-        { label: "ISA", href: "/about-isa" },
-        { label: "AEIE", href: "/about-aeie" },
-        { label: "ISOI", href: "/about-isoi" },
-      ],
-    },
-  ];
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const toggleDropdown = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const dropdowns = document.querySelectorAll(".dropdown");
-      let clickedInsideDropdown = false;
-
-      dropdowns.forEach((dropdown) => {
-        if (dropdown.contains(event.target as Node)) {
-          clickedInsideDropdown = true;
-        }
-      });
-
-      if (!clickedInsideDropdown) {
-        setActiveIndex(null); // Close the dropdown
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
   return (
-    <nav className="sticky p-4">
-      <div className="flex items-center justify-end">
-        <button className="text-white md:hidden" onClick={toggleMenu}>
-          {isOpen ? "Close" : "Menu"}
-        </button>
-      </div>
-      <div>
-        <ul
-          className={`mt-4 md:flex md:justify-around md:space-x-4 ${
-            isOpen ? "block" : "hidden"
-          } md:block`}
-        >
-          {options.map((option, index) => (
-            <li key={index} className="relative dropdown">
-              <button
-                onClick={() => toggleDropdown(index)}
-                className="text-gray-200 text-xl hover:text-gray-800 py-2 px-4 hover:bg-[#c7d2fe] focus:outline-none flex items-center"
-              >
-                {option.name}
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {activeIndex === index && (
-                <ul className="absolute left-0 mt-2 bg-slate-700 text-white rounded shadow-lg w-full z-50">
-                  {option.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link
-                        href={link.href}
-                        className="block w-full py-2 px-4 hover:bg-slate-500"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <div className="flex h-64 w-full justify-start z-20 bg-transparent p-8 text-neutral-200 md:justify-center">
+      <Tabs />
+    </div>
   );
 };
+
+interface TabData {
+  id: number;
+  title: string;
+  Component: React.FC;
+}
+
+const Tabs: React.FC = () => {
+  const [selected, setSelected] = useState<number | null>(null);
+  const [dir, setDir] = useState<"l" | "r" | null>(null);
+
+  const handleSetSelected = (val: number | null) => {
+    if (typeof selected === "number" && typeof val === "number") {
+      setDir(selected > val ? "r" : "l");
+    } else if (val === null) {
+      setDir(null);
+    }
+
+    setSelected(val);
+  };
+
+  return (
+    <div
+      onMouseLeave={() => handleSetSelected(null)}
+      className="relative flex h-fit gap-2"
+    >
+      {TABS.map((t) => (
+        <Tab
+          key={t.id}
+          selected={selected}
+          handleSetSelected={handleSetSelected}
+          tab={t.id}
+        >
+          {t.title}
+        </Tab>
+      ))}
+
+      <AnimatePresence>
+        {selected && <Content dir={dir} selected={selected} />}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+interface TabProps {
+  children: React.ReactNode;
+  tab: number;
+  handleSetSelected: (val: number) => void;
+  selected: number | null;
+}
+
+const Tab: React.FC<TabProps> = ({
+  children,
+  tab,
+  handleSetSelected,
+  selected,
+}) => {
+  return (
+    <button
+      id={`shift-tab-${tab}`}
+      onMouseEnter={() => handleSetSelected(tab)}
+      onClick={() => handleSetSelected(tab)}
+      className={`flex items-center gap-1 rounded-full px-3 py-1.5 text-2xl first-line:transition-colors ${
+        selected === tab ? " bg-neutral-800 text-neutral-300" : "text-white"
+      }`}
+    >
+      <span>{children}</span>
+      <FiChevronDown
+        className={`transition-transform ${
+          selected === tab ? "rotate-180" : ""
+        }`}
+      />
+    </button>
+  );
+};
+
+interface ContentProps {
+  selected: number;
+  dir: "l" | "r" | null;
+}
+
+const Content: React.FC<ContentProps> = ({ selected, dir }) => {
+  return (
+    <motion.div
+      id="overlay-content"
+      initial={{
+        opacity: 0,
+        y: 8,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      exit={{
+        opacity: 0,
+        y: 8,
+      }}
+      className="absolute left-0 top-[calc(100%_+_24px)] w-96 rounded-lg border border-neutral-600 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-800 p-4"
+    >
+      <Bridge />
+      <Nub selected={selected} />
+
+      {TABS.map((t) => (
+        <div className="overflow-hidden" key={t.id}>
+          {selected === t.id && (
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: dir === "l" ? 100 : dir === "r" ? -100 : 0,
+              }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+            >
+              <t.Component />
+            </motion.div>
+          )}
+        </div>
+      ))}
+    </motion.div>
+  );
+};
+
+const Bridge: React.FC = () => (
+  <div className="absolute -top-[24px] left-0 right-0 h-[24px]" />
+);
+
+interface NubProps {
+  selected: number;
+}
+
+const Nub: React.FC<NubProps> = ({ selected }) => {
+  const [left, setLeft] = useState(0);
+
+  useEffect(() => {
+    moveNub();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected]);
+
+  const moveNub = () => {
+    if (selected) {
+      const hoveredTab = document.getElementById(`shift-tab-${selected}`);
+      const overlayContent = document.getElementById("overlay-content");
+
+      if (!hoveredTab || !overlayContent) return;
+
+      const tabRect = hoveredTab.getBoundingClientRect();
+      const { left: contentLeft } = overlayContent.getBoundingClientRect();
+
+      const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
+
+      setLeft(tabCenter);
+    }
+  };
+
+  return (
+    <motion.span
+      style={{
+        clipPath: "polygon(0 0, 100% 0, 50% 50%, 0% 100%)",
+      }}
+      animate={{ left }}
+      transition={{ duration: 0.25, ease: "easeInOut" }}
+      className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border border-neutral-600 bg-neutral-900"
+    />
+  );
+};
+
+const Gallery = () => {
+  return (
+    <div>
+      <div className="">
+        <h3 className="mb-2 text-xl text-neutral-400 transition-colors hover:text-neutral-50 font-bold">
+          <Link href="/codeX" className="mb-1 block">
+            Codex
+          </Link>
+        </h3>
+      </div>
+    </div>
+  );
+};
+
+const About = () => {
+  return (
+    <div className="grid grid-cols-3 gap-4 divide-x font-bold divide-neutral-700">
+      <Link
+        href="#"
+        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+      >
+        <span className="text-xl">ISA</span>
+      </Link>
+      <Link
+        href="#"
+        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+      >
+        <span className="text-xl">AEIE</span>
+      </Link>
+      <Link
+        href="#"
+        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+      >
+        <span className="text-xl">ISOI</span>
+      </Link>
+    </div>
+  );
+};
+
+const TABS: TabData[] = [
+  {
+    title: "Photo Gallery",
+    Component: Gallery,
+  },
+  {
+    title: "About",
+    Component: About,
+  },
+].map((n, idx) => ({ ...n, id: idx + 1 }));
 
 export default NavbarTwo;

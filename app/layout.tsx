@@ -4,8 +4,6 @@ import "./globals.css";
 import Navbar from "./section/Navbar";
 import Footer from "./section/Footer";
 import NavbarTwo from "./section/NavbarTwo";
-import Nav from "./section/NavbarTwo";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
