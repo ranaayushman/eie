@@ -29,7 +29,6 @@ const NavbarTwo: React.FC = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const dropdowns = document.querySelectorAll(".dropdown");
@@ -42,7 +41,7 @@ const NavbarTwo: React.FC = () => {
       });
 
       if (!clickedInsideDropdown) {
-        setActiveIndex(null); // Close the dropdown
+        setActiveIndex(null);
       }
     };
 
