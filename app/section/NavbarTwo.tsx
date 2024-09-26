@@ -40,6 +40,7 @@ const Tabs: React.FC = () => {
     setSelected(val);
   };
 
+
   return (
     <div
       onMouseLeave={() => handleSetSelected(null)}
@@ -152,6 +153,7 @@ interface NubProps {
 const Nub: React.FC<NubProps> = ({ selected }) => {
   const [left, setLeft] = useState(0);
 
+
   useEffect(() => {
     moveNub();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -162,7 +164,9 @@ const Nub: React.FC<NubProps> = ({ selected }) => {
       const hoveredTab = document.getElementById(`shift-tab-${selected}`);
       const overlayContent = document.getElementById("overlay-content");
 
+
       if (!hoveredTab || !overlayContent) return;
+
 
       const tabRect = hoveredTab.getBoundingClientRect();
       const { left: contentLeft } = overlayContent.getBoundingClientRect();
