@@ -16,6 +16,7 @@ const NavbarTwo: React.FC = () => {
       links: [
         { label: "ISA", href: "/about-isa" },
         { label: "AEIE", href: "/about-aeie" },
+        { label: "ISOI", href: "/about-isoi" },
       ],
     },
   ];

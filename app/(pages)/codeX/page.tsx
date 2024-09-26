@@ -13,6 +13,7 @@ const CarouselPage = () => {
 
   return (
     <div>
+      <h1 className="text-center text-[#c7d2fe] font-semibold text-6xl pb-20">Event: CodeX</h1>
       <Carousel3D images={images} />
     </div>
   );
