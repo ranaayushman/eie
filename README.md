@@ -1,7 +1,3 @@
-This Here's a sample GitHub description for the ISA & ISOI project you're working on:
-
----
-
 ## ISA & ISOI Web Platform
 
 This repository hosts the official web platform for the ISA (Instrumentation Systems and Automation) and ISOI (Indian Society of Instrumentation) HIT Chapters. The website serves as a centralized hub for showcasing events, workshops, and notices, along with a vibrant community platform for students and professionals in the field of instrumentation and automation.
@@ -35,7 +31,3 @@ We welcome contributions from the community. Feel free to open issues and submit
 ### License
 
 This project is licensed under the MIT License.
-
----
-
-Feel free to adjust this description based on any additional features or details you would like to include!
