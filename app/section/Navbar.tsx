@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link"; 
+import Link from "next/link";
 import { useState } from "react";
 
 const tabs = [
@@ -21,9 +21,7 @@ const ChipTabs = () => {
       <Link href="/">
         <div className="flex items-center">
           <Image src="/img/file.png" width={100} height={20} alt="" />
-          <p className="hidden sm:inline-block text-white">
-            ISA &amp; ISOI Society
-          </p>
+          <p className="hidden sm:inline-block text-white">EIE Society</p>
         </div>
       </Link>
       <div className="flex">
