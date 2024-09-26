@@ -28,6 +28,6 @@ This repository hosts the official web platform for the ISA (Instrumentation Sys
 
 We welcome contributions from the community. Feel free to open issues and submit pull requests!
 
-### License
+### ISA & ISOI HIT SC
 
-This project is licensed under the MIT License.
+Contribute and make new pages with upcoming events so that this site remains upto date
