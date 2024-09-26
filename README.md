@@ -26,7 +26,7 @@ This repository hosts the official web platform for the ISA (Instrumentation Sys
 
 ### Contributing
 
-We welcome contributions from the community. Feel free to open issues and submit pull requests!
+You can push updates on `test` or `update` branch for updates and testing purposes
 
 ### ISA & ISOI HIT SC
 
