@@ -24,7 +24,7 @@ This repository hosts the official web platform for the ISA (Instrumentation Sys
 
 ### Getting Started
 
-1. Clone the repository: `git clone https://github.com/username/isa-isoi-platform.git`
+1. Clone the repository: `git clone https://github.com/ranaayushman/eie.git`
 2. Install dependencies: `npm install`
 3. Run the development server: `npm run dev`
 
