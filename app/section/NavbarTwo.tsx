@@ -40,7 +40,6 @@ const Tabs: React.FC = () => {
     setSelected(val);
   };
 
-
   return (
     <div
       onMouseLeave={() => handleSetSelected(null)}
@@ -117,7 +116,7 @@ const Content: React.FC<ContentProps> = ({ selected, dir }) => {
         opacity: 0,
         y: 8,
       }}
-      className="absolute left-0 top-[calc(100%_+_24px)] w-96 rounded-lg border border-neutral-600 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-800 p-4"
+      className="absolute left-0 top-[calc(100%_+_24px)] w-full rounded-lg border border-neutral-600 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-800 p-4"
     >
       <Bridge />
       <Nub selected={selected} />
@@ -153,7 +152,6 @@ interface NubProps {
 const Nub: React.FC<NubProps> = ({ selected }) => {
   const [left, setLeft] = useState(0);
 
-
   useEffect(() => {
     moveNub();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -164,9 +162,7 @@ const Nub: React.FC<NubProps> = ({ selected }) => {
       const hoveredTab = document.getElementById(`shift-tab-${selected}`);
       const overlayContent = document.getElementById("overlay-content");
 
-
       if (!hoveredTab || !overlayContent) return;
-
 
       const tabRect = hoveredTab.getBoundingClientRect();
       const { left: contentLeft } = overlayContent.getBoundingClientRect();
