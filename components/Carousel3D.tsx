@@ -1,86 +1,107 @@
 "use client";
 
-import { motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, useEffect, useCallback } from "react";
 import MaxWidthWrapper from "./mmw";
 
 interface CarouselProps {
   images: string[];
+  autoPlayInterval?: number;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ images }) => {
+const Carousel: React.FC<CarouselProps> = ({ images, autoPlayInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [direction, setDirection] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
+    setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
+  const handlePrev = useCallback(() => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  }, [images.length]);
 
   useEffect(() => {
-    const updateSize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const interval = setInterval(handleNext, autoPlayInterval);
+    return () => clearInterval(interval);
+  }, [handleNext, autoPlayInterval]);
 
-    window.addEventListener("resize", updateSize);
-    updateSize();
-
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
+  const variants = {
+    enter: (direction: number) => ({
+      z: -1000,
+      rotateY: direction > 0 ? 90 : -90,
+      opacity: 0,
+    }),
+    center: {
+      z: 0,
+      rotateY: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      z: -1000,
+      rotateY: direction < 0 ? 90 : -90,
+      opacity: 0,
+    }),
+  };
 
   return (
-    <div className="carousel-container relative w-full max-w-[100vw] h-[400px] flex justify-center items-center overflow-hidden">
+    <div className="carousel-container relative w-full max-w-[100vw] h-[400px] flex justify-center items-center overflow-hidden perspective-1000">
       <MaxWidthWrapper>
+        <div className="carousel-3d-container relative w-full h-full preserve-3d">
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={currentIndex}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                z: { type: "spring", stiffness: 300, damping: 30 },
+                rotateY: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 },
+              }}
+              className="absolute w-full h-full"
+              style={{
+                transformStyle: "preserve-3d",
+              }}
+            >
+              <img
+                src={images[currentIndex]}
+                alt={`Slide ${currentIndex + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIndex ? "bg-white" : "bg-gray-400"
+              }`}
+              onClick={() => {
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
+              }}
+            />
+          ))}
+        </div>
+
         <button
           onClick={handlePrev}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black w-12 text-2xl bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 z-20"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 w-12 h-12 flex items-center justify-center text-2xl text-white rounded-full hover:bg-black/70 z-20"
         >
           {"<"}
         </button>
 
-        <div className="carousel-track flex items-center justify-center space-x-4 sm:space-x-6">
-          {images.map((src, index) => {
-            const isCenter = index === currentIndex;
-            const isLeft = (index + 1) % images.length === currentIndex;
-            const isRight =
-              (index - 1 + images.length) % images.length === currentIndex;
-
-            if (isMobile && !isCenter && !isLeft && !isRight) {
-              return null;
-            }
-
-            return (
-              <motion.div
-                key={index}
-                className={`relative flex-shrink-0 rounded-lg overflow-hidden shadow-lg transition-all duration-500 ${
-                  isCenter
-                    ? "w-[200px] h-[250px] md:w-[300px] md:h-[400px] opacity-100 scale-110 z-10"
-                    : "w-[100px] h-[150px] md:w-[200px] md:h-[300px] opacity-50 scale-90 z-0"
-                } ${isLeft || isRight || isCenter ? "" : "hidden sm:block"}`}
-                whileHover={isCenter ? { scale: 1.2 } : undefined}
-                transition={{ duration: 0.5 }}
-              >
-                <motion.img
-                  src={src}
-                  alt={`Slide ${index + 1}`}
-                  className="w-full h-full object-cover"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0.9 }}
-                  transition={{ duration: 0.5 }}
-                />
-              </motion.div>
-            );
-          })}
-        </div>
-
         <button
           onClick={handleNext}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 w-12 text-2xl rounded-full hover:bg-opacity-70 z-20"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 w-12 h-12 flex items-center justify-center text-2xl text-white rounded-full hover:bg-black/70 z-20"
         >
           {">"}
         </button>
