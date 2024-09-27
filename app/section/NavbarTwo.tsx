@@ -154,7 +154,7 @@ const Nub: React.FC<NubProps> = ({ selected }) => {
 
   useEffect(() => {
     moveNub();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   }, [selected]);
 
   const moveNub = () => {
@@ -200,26 +200,23 @@ const Gallery = () => {
 };
 
 const About = () => {
+  const aboutItems = [
+    { name: "ISA", href: "/about-isa" },
+    { name: "AEIE", href: "/about-aeie" },
+    { name: "ISOI", href: "/about-isoi" },
+  ];
+
   return (
     <div className="grid grid-cols-3 gap-4 divide-x font-bold divide-neutral-700">
-      <Link
-        href="#"
-        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
-      >
-        <span className="text-xl">ISA</span>
-      </Link>
-      <Link
-        href="#"
-        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
-      >
-        <span className="text-xl">AEIE</span>
-      </Link>
-      <Link
-        href="#"
-        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
-      >
-        <span className="text-xl">ISOI</span>
-      </Link>
+      {aboutItems.map((item, index) => (
+        <Link
+          key={index}
+          href={item.href}
+          className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+        >
+          <span className="text-xl">{item.name}</span>
+        </Link>
+      ))}
     </div>
   );
 };
