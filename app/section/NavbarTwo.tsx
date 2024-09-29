@@ -154,7 +154,6 @@ const Nub: React.FC<NubProps> = ({ selected }) => {
 
   useEffect(() => {
     moveNub();
-  
   }, [selected]);
 
   const moveNub = () => {
@@ -186,15 +185,23 @@ const Nub: React.FC<NubProps> = ({ selected }) => {
 };
 
 const Gallery = () => {
+  const galleryItems = [
+    { name: "Codex", href: "/codeX" },
+    { name: "Tech Quiz 5.0", href: "/techquiz" },
+  ];
+
   return (
-    <div>
-      <div className="">
-        <h3 className="mb-2 text-xl text-neutral-400 transition-colors hover:text-neutral-50 font-bold">
-          <Link href="/codeX" className="mb-1 block">
-            Codex
+    <div className="grid grid-cols-1 md:grid-cols-2  gap-4">
+      {galleryItems.map((item, index) => (
+        <div
+          key={index}
+          className="text-xl font-bold text-neutral-400 hover:text-neutral-50 transition-colors"
+        >
+          <Link href={item.href}>
+            <span>{item.name}</span>
           </Link>
-        </h3>
-      </div>
+        </div>
+      ))}
     </div>
   );
 };
@@ -207,7 +214,7 @@ const About = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4 divide-x font-bold divide-neutral-700">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-sm:divide-y md:divide-x font-bold divide-neutral-700">
       {aboutItems.map((item, index) => (
         <Link
           key={index}
