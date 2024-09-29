@@ -44,7 +44,7 @@ const EventCarousel_1: React.FC = () => {
             <Image
               src={eventImages[currentIndex]}
               alt={`Event Image ${currentIndex + 1}`}
-              fill
+              layout="fill"
               priority
             />
           </motion.div>

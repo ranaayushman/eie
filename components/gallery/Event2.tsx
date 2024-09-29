@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -42,7 +42,8 @@ const EventCarousel_2: React.FC = () => {
             <Image
               src={eventImages[currentIndex]}
               alt={`Event Image ${currentIndex + 1}`}
-              fill
+              layout="fill"
+              
               priority
             />
           </motion.div>

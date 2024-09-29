@@ -9,14 +9,14 @@ import Testimonial from "@/app/section/Testimonial"
 
 const Main = () => {
   return (
-    <div>
+    <>
         <Hero />
         <Previous />
         <PastEvents />
         <Notice />
         <Socials />
         <Testimonial />
-    </div>
+    </>
   )
 }
 

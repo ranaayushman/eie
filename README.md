@@ -14,7 +14,8 @@ This repository hosts the official web platform for the ISA (Instrumentation Sys
 ### Tech Stack
 
 - **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Framer Motion
-- **Animations:** Framer Motion
+- **Backend:** Prisma for database integration and Next.js API routes
+- **Animations:** GSAP, Framer Motion
 - **Deployment:** Vercel
 
 ### Getting Started
@@ -25,7 +26,7 @@ This repository hosts the official web platform for the ISA (Instrumentation Sys
 
 ### Contributing
 
-You can push updates on `test` or `update` branch for updates and testing purposes
+We welcome contributions from the community. Feel free to open issues and submit pull requests!
 
 ### ISA & ISOI HIT SC
 
