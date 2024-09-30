@@ -30,83 +30,74 @@ const NavbarTwo: React.FC = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const dropdowns = document.querySelectorAll(".dropdown");
-      let clickedInsideDropdown = false;
+    moveNub();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selected]);
 
-      dropdowns.forEach((dropdown) => {
-        if (dropdown.contains(event.target as Node)) {
-          clickedInsideDropdown = true;
-        }
-      });
+  const moveNub = () => {
+    if (selected) {
+      const hoveredTab = document.getElementById(`shift-tab-${selected}`);
+      const overlayContent = document.getElementById("overlay-content");
 
-      if (!clickedInsideDropdown) {
-        setActiveIndex(null);
-      }
-    };
+      if (!hoveredTab || !overlayContent) return;
 
-    document.addEventListener("click", handleClickOutside);
+      const tabRect = hoveredTab.getBoundingClientRect();
+      const { left: contentLeft } = overlayContent.getBoundingClientRect();
 
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+      const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
+
+      setLeft(tabCenter);
+    }
+  };
 
   return (
-    <nav className="sticky p-4">
-      <div className="flex items-center justify-end">
-        <button className="text-white md:hidden" onClick={toggleMenu}>
-          {isOpen ? "Close" : "Menu"}
-        </button>
+    <motion.span
+      style={{
+        clipPath: "polygon(0 0, 100% 0, 50% 50%, 0% 100%)",
+      }}
+      animate={{ left }}
+      transition={{ duration: 0.25, ease: "easeInOut" }}
+      className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-tl border border-neutral-600 bg-neutral-900"
+    />
+  );
+};
+
+const Gallery = () => {
+  return (
+    <div>
+      <div className="">
+        <h3 className="mb-2 text-xl text-neutral-400 transition-colors hover:text-neutral-50 font-bold">
+          <Link href="/codeX" className="mb-1 block">
+            Codex
+          </Link>
+        </h3>
       </div>
-      <div>
-        <ul
-          className={`mt-4 md:flex md:justify-around md:space-x-4 ${
-            isOpen ? "block" : "hidden"
-          } md:block`}
-        >
-          {options.map((option, index) => (
-            <li key={index} className="relative dropdown">
-              <button
-                onClick={() => toggleDropdown(index)}
-                className="text-gray-200 text-xl hover:text-gray-800 py-2 px-4 hover:bg-[#c7d2fe] focus:outline-none flex items-center"
-              >
-                {option.name}
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              {activeIndex === index && (
-                <ul className="absolute left-0 mt-2 bg-slate-700 text-white rounded shadow-lg w-full z-50">
-                  {option.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link
-                        href={link.href}
-                        className="block w-full py-2 px-4 hover:bg-slate-500"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    </div>
+  );
+};
+
+const About = () => {
+  return (
+    <div className="grid grid-cols-3 gap-4 divide-x font-bold divide-neutral-700">
+      <Link
+        href="#"
+        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+      >
+        <span className="text-xl">ISA</span>
+      </Link>
+      <Link
+        href="#"
+        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+      >
+        <span className="text-xl">AEIE</span>
+      </Link>
+      <Link
+        href="#"
+        className="flex w-full flex-col items-center justify-center py-2 text-neutral-400 transition-colors hover:text-neutral-50"
+      >
+        <span className="text-xl">ISOI</span>
+      </Link>
+    </div>
   );
 };
 
