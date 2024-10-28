@@ -19,13 +19,17 @@ This repository hosts the official web platform for the ISA (Instrumentation Sys
 - **Deployment:** Vercel
 
 ### Getting Started
-
-1. Clone the repository: `git clone https://github.com/ranaayushman/eie.git`
-2. Install dependencies: `npm install`
-3. Run the development server: `npm run dev`
+1. Fork the respository. 
+2. Clone the repository: `git clone https://github.com/[your-github-username]/ranaayushman/eie.git`
+3. Install dependencies: `npm install`
+4. Run the development server: `npm run dev`
 
 ### Contributing
-
+**How to contribute?**
+1. `git switch [your-branch-name]`
+2. `git add .`
+3. `git commit -m '[your-message]`
+4. `git push -u origin [your-branch-name]`
 We welcome contributions from the community. Feel free to open issues and submit pull requests!
 
 ### ISA & ISOI HIT SC
